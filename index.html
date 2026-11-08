@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b0b0b">
+  <meta name="description" content="Mr Foodie — Taste That Hits Different. Burgers, rolls, tikka, broast and breakfast.">
+  <title>Mr Foodie | Taste That Hits Different</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="announcement">FRESH • HOT • MADE TO ORDER <span>—</span> WELCOME TO MR FOODIE</div>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Mr Foodie home"><span class="brand-mark">MF</span><span>MR <b>FOODIE</b><small>TASTE THAT HITS DIFFERENT</small></span></a>
+    <nav class="desktop-nav"><a href="#home">Home</a><a href="#menu">Our Menu</a><a href="#about">Our Story</a></nav>
+    <button class="cart-open" id="cartOpen" aria-label="Open cart">YOUR CART <span id="cartCount">0</span> <b>↗</b></button>
+    <button class="mobile-menu" id="mobileMenu" aria-label="Open menu">☰</button>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <p class="eyebrow"><span></span> THE GOOD FOOD CLUB</p>
+        <h1>BIG BITES.<br><em>BOLD</em> FLAVOUR.</h1>
+        <p class="hero-sub">Cravings don't wait. Neither should you. Get your favourites, freshly made and packed with flavour.</p>
+        <div class="hero-actions"><a class="btn btn-light" href="#menu">EXPLORE MENU <span>↗</span></a><div class="hero-note"><b>100%</b><small>CRAVE<br>WORTHY</small></div></div>
+        <div class="hero-bottom"><span>BURGERS / ROLLS / BBQ / MORE</span><span>SCROLL TO EXPLORE ↓</span></div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-circle"></div>
+        <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1100&q=85" alt="Juicy double cheeseburger" class="hero-food">
+        <div class="hero-sticker">MADE<br>FRESH<br>FOR YOU</div>
+        <div class="hero-tag">THE<br>ULTIMATE<br>CRAVING.</div>
+      </div>
+    </section>
+
+    <section class="ticker"><div>GOOD FOOD • GOOD MOOD • MR FOODIE • GOOD FOOD • GOOD MOOD • MR FOODIE • </div></section>
+
+    <section class="menu-section" id="menu">
+      <div class="section-head">
+        <div><p class="eyebrow"><span></span> WHAT ARE YOU CRAVING?</p><h2>THE <em>MENU.</em></h2></div>
+        <p class="section-desc">From the first bite to the last crumb — find your next favourite.</p>
+      </div>
+      <div class="menu-tools">
+        <div class="category-tabs" id="categoryTabs">
+          <button class="active" data-category="All">All items</button>
+          <button data-category="Burgers">Burgers</button>
+          <button data-category="Rolls">Zinger rolls</button>
+          <button data-category="Tikka">Tikka</button>
+          <button data-category="Broast">Broast</button>
+          <button data-category="Breakfast">Breakfast</button>
+        </div>
+        <label class="search-box"><span>⌕</span><input id="searchInput" type="search" placeholder="Find your craving..."></label>
+      </div>
+      <div class="product-grid" id="productGrid"></div>
+    </section>
+
+    <section class="promo" id="about">
+      <div class="promo-image"><img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=1100&q=85" alt="Fresh grilled food"></div>
+      <div class="promo-copy"><p class="eyebrow"><span></span> THE MR FOODIE PROMISE</p><h2>NO SHORTCUTS.<br><em>JUST FLAVOUR.</em></h2><p>Freshly prepared, generously served and always made to satisfy. Your cravings deserve the good stuff.</p><a href="#menu" class="text-link">FIND YOUR FAVOURITE ↗</a></div>
+    </section>
+  </main>
+
+  <footer><a class="brand footer-brand" href="#home"><span class="brand-mark">MF</span><span>MR <b>FOODIE</b><small>TASTE THAT HITS DIFFERENT</small></span></a><p>GOOD FOOD. GREAT MOOD. EVERY TIME.</p><span>© <span id="year"></span> MR FOODIE</span></footer>
+
+  <div class="overlay" id="overlay"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart">
+    <div class="drawer-head"><div><p class="eyebrow">YOUR SELECTION</p><h3>THE CART <span id="drawerCount">(0)</span></h3></div><button class="icon-close" id="cartClose" aria-label="Close cart">×</button></div>
+    <div class="cart-items" id="cartItems"><div class="empty-cart">Your cart is looking hungry.<br><b>Let's fix that.</b></div></div>
+    <div class="cart-bottom"><div class="subtotal"><span>Subtotal</span><b id="cartSubtotal">Rs. 0</b></div><p>Delivery charges, if any, will be confirmed with you.</p><button class="btn btn-light full" id="checkoutBtn">PROCEED TO CHECKOUT ↗</button></div>
+  </aside>
+
+  <div class="modal-wrap" id="checkoutModal">
+    <div class="checkout-modal">
+      <div class="drawer-head"><div><p class="eyebrow">ALMOST THERE</p><h3>ORDER <em>DETAILS.</em></h3></div><button class="icon-close" id="modalClose" aria-label="Close checkout">×</button></div>
+      <div class="order-summary" id="orderSummary"></div>
+      <form id="orderForm">
+        <div class="form-grid">
+          <label>Full name<input name="customer_name" required placeholder="Your name"></label>
+          <label>Phone number<input name="phone" required type="tel" placeholder="03XX XXXXXXX" pattern="[0-9+() -]{8,20}"></label>
+          <label class="wide">Delivery address<textarea name="address" required rows="2" placeholder="House, street, area, city"></textarea></label>
+          <label>Order type<select name="order_type"><option>Home delivery</option><option>Pickup</option></select></label>
+          <label>Payment method<select name="payment_method"><option>Cash on delivery</option><option>Pay at pickup</option></select></label>
+          <label class="wide">Extra instructions (optional)<textarea name="instructions" rows="2" placeholder="Any special request?"></textarea></label>
+        </div>
+        <div class="checkout-total"><span>Total</span><b id="checkoutTotal">Rs. 0</b></div>
+        <button class="btn btn-dark full" type="submit" id="submitOrder">PLACE ORDER ↗</button>
+        <p class="form-note">Your order details will be sent to the restaurant by email. Please wait for the confirmation message.</p>
+        <div class="form-status" id="formStatus" role="status"></div>
+      </form>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
